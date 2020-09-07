@@ -9,7 +9,7 @@ COPY yapi.tar.gz /home
 RUN cd /home && tar zxvf yapi.tar.gz && mkdir /api && mv /home/yapi-1.9.2 /api/vendors
 
 RUN cd /api/vendors && \
-    npm install --production --registry https://registry.npm.taobao.org
+    npm install --production --registry https://registry.npm.taobao.org && npm run install-server
 
 FROM node:alpine3.11
 
@@ -24,8 +24,6 @@ COPY --from=0 /api/vendors /api/vendors
 COPY config.json /api/
 
 WORKDIR /api/vendors
-
-RUN npm run install-server
 
 EXPOSE 3000
 
