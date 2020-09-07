@@ -17,11 +17,12 @@ MAINTAINER 229381366@qq.com
 
 ENV TZ="Asia/Shanghai" HOME="/"
 
-WORKDIR ${HOME}
-
 COPY --from=0 /api/vendors /api/vendors
 
 COPY config.json /api/
+
+RUN RUN cd /api/vendors && \
+    npm run install-server
 
 WORKDIR /api/vendors
 
