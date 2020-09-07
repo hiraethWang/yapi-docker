@@ -30,5 +30,3 @@ RUN npm run install-server
 EXPOSE 3000
 
 ENTRYPOINT ["node"]
-
-CMD ["server/app.js"]
