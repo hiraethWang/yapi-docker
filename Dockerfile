@@ -23,6 +23,12 @@ COPY --from=0 /api/vendors /api/vendors
 
 COPY config.json /api/
 
+WORKDIR /api/vendors
+
+RUN npm run install-server
+
 EXPOSE 3000
 
 ENTRYPOINT ["node"]
+
+CMD ["server/app.js"]
