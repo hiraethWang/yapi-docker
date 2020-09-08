@@ -3,9 +3,9 @@
   "adminAccount": "admin@admin.com",
   "timeout":120000,
   "db": {
-    "servername": "118.31.2.183",
+    "servername": "mongodb.huaching-online",
     "DATABASE": "yapi",
-    "port": 30017,
+    "port": 27017,
     "authSource": ""
   },
   "mail": {
